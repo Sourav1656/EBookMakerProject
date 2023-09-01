@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <img
+        src="../../assets/images/ebook-logo.png"
+        alt="Logo"
+        width="75"
+        height="75"
+        class="d-inline-block align-text-top"
+      />
+      <span class="navbar-brand text-white">Ebook Maker</span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main_nav">
+        <ul class="navbar-nav ms-auto"> <!-- Use 'ms-auto' to push the items to the right -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Login Options</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/admin-login">Admin</a></li>
+              <li><a class="dropdown-item" routerLink="/author-login">Author</a></li>
+              <li><a class="dropdown-item" routerLink="/login">User</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Register Options</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/author-register">Author</a></li>
+              <li><a class="dropdown-item" routerLink="/register">User</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div> <!-- navbar-collapse.// -->
+    </div> <!-- container-fluid.// -->
+  </nav>
+  

@@ -1,0 +1,21 @@
+<div>
+  <app-header></app-header>
+</div>
+<div class="py-4 text-center">
+  <div class="container">
+    <div class="book-page">
+      <div class="book-title">
+        <h1>{{ ebook?.bookId }}</h1>
+      </div>
+      <div class="book-author">
+        <h3>-By {{ ebook?.authorName }}</h3>
+      </div>
+      <div class="book-content">
+        <p>{{ ebook?.content }}</p>
+      </div>
+    </div>
+    <div class="download-button">
+      <button (click)="downloadBook()">Download DOC</button>
+    </div>
+  </div>
+</div>

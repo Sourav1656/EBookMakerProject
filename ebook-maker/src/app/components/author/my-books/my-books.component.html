@@ -1,0 +1,55 @@
+<div>
+  <app-author-header></app-author-header>
+</div>
+
+<div class="py-4 text-center">
+  <h3 class="book-verification-text">Your Books</h3>
+</div>
+<div class="container py-2">
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Book</th>
+          <th scope="col">Genre</th>
+          <th scope="col">Description</th>
+          <th scope="col">Status</th>
+          <th scope="col" class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ book.id }}</td>
+          <td>[{{ book.genre }}]</td>
+          <td>{{ book.description }}</td>
+          <td>{{ book.completed ? "completed" : "incomplete" }}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-success btn-margin-right"
+              routerLink="/update-book"
+            >
+              Update
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="deleteBook(book.id)"
+            >
+              Delete
+            </button>
+            <button
+              type="button"
+              class="btn btn-success btn-margin-right custom-button"
+              (click)="setComplete(book.id)"
+            >
+              Set As Complete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

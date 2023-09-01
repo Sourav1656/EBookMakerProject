@@ -1,0 +1,63 @@
+<div>
+  <app-header></app-header>
+</div>
+
+<div class="py-4 text-center">
+  <h3 class="home-text py-3">Welcome Admin!</h3>
+  <form class="d-flex mx-auto search" role="search">
+    <div
+      class="p-1 bg-light rounded rounded-pill shadow"
+      style="width: 70%; margin: 0 auto"
+    >
+      <div class="input-group">
+        <input
+          type="search"
+          placeholder="What're you searching for?"
+          aria-describedby="button-addon1"
+          class="form-control border-0 bg-light"
+          [(ngModel)]="searchTerm"
+          name="searchTerm"
+          (ngModelChange)="handleSearchChange()"
+        />
+        <div class="input-group-append">
+          <button
+            id="button-addon1"
+            type="submit"
+            class="btn btn-link text-primary"
+          >
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="container py-4">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 mb-4" *ngFor="let ebook of filteredEbooks">
+      <!-- For PC view 4 cards, For Tab 2 cards and For Mobile 1 card per row-->
+      <div class="card">
+        <div class="card-body text-center">
+          <h4 class="card-title">{{ ebook.bookId }}</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>Author: </b>{{ ebook.authorName }}</li>
+          <li class="list-group-item">
+            <strong>Genre: </strong> {{ ebook.genre }}
+          </li>
+        </ul>
+        <div class="card-body">
+          <p class="card-text">{{ ebook.description }}</p>
+          <div class="btn-div d-flex justify-content-end">
+            <a
+              [routerLink]="['/admin-view-ebook', ebook.bookId]"
+              class="btn btn-primary"
+              >View</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

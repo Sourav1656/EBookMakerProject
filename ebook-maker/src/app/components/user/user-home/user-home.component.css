@@ -1,0 +1,13 @@
+.card {
+    height: 350px;
+}
+
+.card-body {
+    position: relative;
+}
+
+.btn-div {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}

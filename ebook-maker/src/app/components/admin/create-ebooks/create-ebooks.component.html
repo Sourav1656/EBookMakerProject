@@ -1,0 +1,43 @@
+<div>
+  <app-header></app-header>
+</div>
+
+<div class="py-4 text-center">
+  <h3 class="book-verification-text">List of Verified Books</h3>
+</div>
+<div class="container py-2">
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Book</th>
+          <th scope="col">Author</th>
+          <th scope="col">Genre</th>
+          <th scope="col">Description</th>
+          <th scope="col" class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let verifiedbook of verifiedbooks; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ verifiedbook.id }}</td>
+          <td>{{ verifiedbook.authorName }}</td>
+          <td>{{ verifiedbook.genre }}</td>
+          <td>{{ verifiedbook.description }}</td>
+          <td class="text-center">
+            <div class="button-container">
+              <button
+                type="button"
+                class="btn btn-success btn-margin-right custom-button"
+                (click)="addToEbooks(verifiedbook.id)"
+              >
+                Create Ebook
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

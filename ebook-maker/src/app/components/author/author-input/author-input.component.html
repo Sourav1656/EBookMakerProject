@@ -1,0 +1,23 @@
+<div>
+  <app-author-header></app-author-header>
+</div>
+
+<div class="container py-4 text-center">
+  <h3 class="book-verification-text">Confirm Your Author Id</h3>
+</div>
+<div class="container d-flex justify-content-center">
+  <form (ngSubmit)="onSubmit()" class="col-md-6 shadow p-3 bg-white rounded">
+    <div class="form-group py-3">
+      <label for="authorId">Author ID:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="authorId"
+        [(ngModel)]="authorId"
+        name="authorId"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Show Books</button>
+  </form>
+</div>
